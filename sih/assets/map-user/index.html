@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Supply Network</title>
+    <!-- Include Leaflet CSS and JavaScript -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  
+  
+    <!-- Include your custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+    
+       
+      <nav class="navbar">
+          <div class="logo">
+              <img src="jal_jeevan_mission_logo.jpg" alt="Jal Jeevan Mission Logo">
+              <h1>Jal Jodak</h1>
+          </div>
+          
+              <ul class="navbar-menu">
+                  
+                  <li style="background-color: blue;"><a href="maps.html">Admin Login</a></li>
+              </ul>
+        
+      </nav>
+
+
+</header>
+    <!-- Sidebar -->
+    <div class="container">
+      
+
+      <!-- Map Section -->
+      <div id="map" class="map"></div>
+    </div>
+    <script>
+      var l = "{{lis|escapejs}}";
+      var p = "{{p|escapejs}}";
+      var max="{{max}}"
+      console.log(max);
+      var hydrantIcon = L.icon({
+        iconUrl: 'hydrant-icon.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+      });
+
+      var tankIcon = L.icon({
+        iconUrl: 'tank-icon.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+      });
+
+      var purifierIcon = L.icon({
+        iconUrl: 'purifier-icon.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+      });
+
+      var valveIcon = L.icon({
+        iconUrl: 'valve-icon.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

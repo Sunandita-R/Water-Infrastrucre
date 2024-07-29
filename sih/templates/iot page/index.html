@@ -1,0 +1,346 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-compatible" content="IE-edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Water Leak Detection</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: Figtree, sans-serif;
+        }
+        .header {
+           
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+           
+            width: 800px;
+            font-family: 'Acronym', sans-serif;
+        }
+        
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            width: 80px;
+        }
+        
+        /* Apply Montserrat font to all h2 elements */
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: large;
+            /* Add other h2 styles here if needed */
+        }
+        
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            margin-left: 10px;
+            display: inline-block;
+            color: #1b95d4;
+            padding-bottom: 10px;
+        }
+        
+        .header .logo img {
+            max-width: 100%;
+            max-height: 180px; /* Adjust the maximum height as needed */
+        }
+        
+        /* Style for the navbar */
+        .navbar {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+            position: fixed; /* Make the navbar fixed at the top */
+            z-index: 100; /* Set a high z-index to ensure it's displayed above other content */
+            top: 0; /* Position it at the top of the viewport */
+            font-family: 'Acronym', sans-serif;
+        }
+        
+        body {
+            padding-top: 80px; /* Adjust this value based on the height of your navbar */
+            background-color: rgb(245, 234, 213);
+        }
+        
+        .navbar-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-left: auto;
+        }
+        
+        .navbar-menu li {
+            margin-right: 20px;
+        }
+        
+        .navbar-menu a {
+            text-decoration: none;
+            color: #1b95d4;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Table Styles */
+        .table {
+            margin: 20px; /* Add margin to create space around the table */
+            border-radius: 10px; /* Add rounded edges */
+            overflow: hidden; /* Hide overflowing content if needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+            width: calc(100% - 40px); /* Adjust width to account for margins */
+        }
+        
+        .table td,
+        .table th {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .table th {
+            background-color: #92c9e6;
+            color: #ffffff;
+        }
+        
+        .table tbody tr:nth-child(even) {
+            background-color: #d1e8f5;
+        }
+        .table tbody tr:nth-child(odd) {
+            background-color: #d1e8f5;
+        }
+        /* Red status */
+        .table .red {
+            background-color: red;
+            color: white;
+        }
+        
+        /* Green status */
+        .table .green {
+            background-color: green;
+            color: white;
+        }
+        
+        /* Responsive Table */
+        @media (max-width: 500px) {
+            .table thead {
+                display: none;
+            }
+        
+            .table,
+            .table tbody,
+            .table tr,
+            .table td {
+                display: block;
+                width: 100%;
+            }
+        
+            .table tr {
+                margin-bottom: 15px;
+            }
+        
+            .table td {
+                padding-left: 50%;
+                text-align: left;
+                position: relative;
+            }
+        
+            .table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 15px;
+                font-size: 15px;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
+        
+        /* ... (Previous CSS rules) ... */
+        
+        /* Style for the "View" button */
+        .table a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #007bff; /* Button background color */
+            color: #fff; /* Button text color */
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+        
+        .table a:hover {
+            background-color: #0056b3; /* Button background color on hover */
+        }
+       
+            /* Other styles... */
+          
+            /* Style for the "View" buttons */
+    
+            .table input[type="submit"] {
+          
+              padding: 8px 16px;
+              background-color: #007bff;
+              color: #fff;
+              text-decoration: none;
+              border-radius: 4px;
+              transition: background-color 0.3s ease;
+              border: none;
+              font-size: 1rem; /* Set the desired font size */
+            }
+          
+            .table a:hover,
+            .table input[type="submit"]:hover {
+              background-color: #0056b3;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                background-color: white;
+              }
+        
+              .logo {
+                display: flex;
+                align-items: center;
+              }
+        
+              .logo img {
+                height: 60px;
+                width: 80px;
+              }
+        
+              .logo h1 {
+                font-size: 1.5rem;
+                margin-left: 10px;
+                color: #1b95d4;
+                padding-bottom: 10px;
+              }
+        
+              .admin-login-button {
+                display: flex; /* Add display flex to align button and h1 horizontally */
+                align-items: center; /* Vertically align button and h1 */
+                margin-left: auto;
+              }
+        
+              .admin-login-button button {
+                background-color: #1b95d4;
+                color: white;
+                padding: 10px 15px;
+                font-size: 1.2rem;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out;
+                position: absolute;
+                left: 1200px;
+                width: 200px;
+                margin-right: 30px;
+                top: 30px;
+              }
+        
+              .admin-login-button button:hover {
+                background-color: #004295;
+              }
+            </style>
+          
+          
+
+</head>
+<body>
+   
+    
+       
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static 'jal_jeevan_mission_logo.jpg' %}" alt="Jal Jeevan Mission Logo">
+                <h1>JAL JODAK</h1>
+            </div>
+            
+                
+          
+        </nav>
+        <div class="admin-login-button" >
+            <form action="admout" method="post">
+              {% csrf_token %}
+              <button style="margin-right: 4%;" type="submit">Log Out</button>
+            </form>
+          </div>
+    
+
+
+
+  
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Entry ID</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>View Graph</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Entry ID">1</td>
+                <td data-label="Location">MPH</td>
+                <td data-label="Status" class="green"> No Leak </td>
+                <td data-label="View Graph">
+                    <a href="#">
+                      <form action="iotvis" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="View" style="display: inline-block; padding:0px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none;">
+                      </form>
+                    </a>
+                  </td>
+                  
+                </a></td>
+            </tr>
+            <tr>
+                <td data-label="Sensor ID">2</td>
+                <td data-label="Location">Block 3 external pipe</td>
+                <td data-label="Status" class="green">No Leak</td>
+                <td data-label="View Graph"><a href="#">View</a></td>
+            </tr>
+            <tr>
+                <td data-label="Sensor ID">3</td>
+                <td data-label="Location">Mechanical Department ground water pipe</td>
+                <td data-label="Status" class="red">Leak Detected</td>
+                <td data-label="View Graph"><a href="#">View</a></td>
+            </tr>
+            <tr>
+                <td data-label="Sensor ID">4</td>
+                <td data-label="Location">Canteen upper tank</td>
+                <td data-label="Status" class="green">No Leak</td>
+                <td data-label="View Graph"><a href="#">View</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

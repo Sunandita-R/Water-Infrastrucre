@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Jal Jeevan Mission</title>
+    <link rel="stylesheet" href="{% static './style.css' %}">
+</head>
+<body>
+    <header>
+    
+       
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="{% static 'jal_jeevan_mission_logo.jpg' %}" alt="Jal Jeevan Mission Logo">
+                    <h1>JAL JODAK</h1>
+                </div>
+                
+                    <ul class="navbar-menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="maps.html">Contact Us</a></li>
+                    </ul>
+              
+            </nav>
+  
+    
+    </header>
+    
+    <div class="container1">
+        <div class="background-image1">
+            <div class="centered-content">
+                <h2 style="font-size: 65px;">DISCOVER JAL JEEVAN MISSION <br>WATER SUPPLY NETWORK MAP</h2>
+                <form action="usermap" method="post">{% csrf_token %}<a class="transparent-button"><input type="submit" value="MAP" style=" background: none;
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    color: #1b95d4;
+                    
+                    font-size: 1.2rem;"></a></form>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container2">
+        <div class="background-image2">
+            <div class="centered-content">
+                <h2 style="color: rgb(45, 14, 226); font-size: 50px;">Voice out your concerns <br>in grievance redressal</h2>
+                <form action="grieve" method="post">{% csrf_token %}<a class="transparent-button"><input type="submit" value="GRIEVANCE" style=" background: none;
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    background: none;
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    color: #1b95d4;
+                    font-size: 1.2rem;"></a></form>
+            </div>
+        </div>
+    </div>
+    <div class="container3">
+        <h2 class="news-heading">Latest News</h2>
+        <div class="news-filter">
+            <label for="location">Select Location:</label>
+            <select id="location" name="location">
+                <option value="all">All Locations</option>
+                <option value="location1">Sriperumbudur, Tamil Nadu</option>
+                <option value="location2">Ashok Nagar, Tamil Nadu</option>
+                <!-- Add more location options as needed -->
+            </select>
+        </div>
+        <div class="news-list">
+            <!-- Sample News Article 1 -->
+            <div class="news-article">
+                <h3>Jal Jeevan Mission Completes Water Supply Project in Rural Area</h3>
+                <p>Date: September 22, 2023</p>
+                <p>Location: Sriperumbudur, Tamil Nadu</p>
+                <img src="{% static 'jal_jeevan_mission_image1.jpg' %}" alt="Jal Jeevan Mission Project Image 1">
+                <p>
+                    The Jal Jeevan Mission has successfully completed a water supply project in a rural area,
+                    providing clean and safe drinking water to thousands of households. This initiative is a
+                    significant step towards ensuring access to clean water for all in remote regions.
+                </p>
+            </div>
+            <!-- End of Sample News Article 1 -->
+    
+            <!-- Sample News Article 2 -->
+            <div class="news-article">
+                <h3>Jal Jeevan Mission Launches Awareness Campaign on Water Conservation</h3>
+                <p>Date: September 23, 2023</p>
+                <p>Location: Sriperumbudur, Tamil Nadu</p>
+                <img src="{% static 'jal_jeevan_mission_image2.jpg' %}" alt="Jal Jeevan Mission Awareness Campaign Image">
+                <p>
+                    The Jal Jeevan Mission has initiated a comprehensive awareness campaign to educate communities
+                    on water conservation practices. The campaign aims to promote responsible water usage and sustainability.
+                </p>
+            </div>
+            <!-- End of Sample News Article 2 -->
+    
+            <!-- Sample News Article 3 -->
+            <!-- <div class="news-article">
+                <h3>Jal Jeevan Mission Receives Award for Excellence in Water Infrastructure</h3>
+                <p>Date: September 24, 2023</p>
+                <p>Location: Town Name 3, State 3</p>
+                <img src="jal_jeevan_mission_image3.jpg" alt="Jal Jeevan Mission Award Image">
+                <p>
+                    The Jal Jeevan Mission has been honored with an award for its outstanding contribution
+                    to water infrastructure development. This recognition highlights its dedication to improving
+                    water accessibility across the region.
+                </p>
+            </div> -->
+            <!-- End of Sample News Article 3 -->
+    
+            <!-- News articles will be dynamically generated here based on the selected location -->
+            <!-- You can use JavaScript to fetch and display news articles -->
+        </div>
+    </div>
+    <!-- <div class="container4">
+        <div class="news-gallery">
+        
+            <img src="gallery-image1.jpg" alt="Gallery Image 1">
+            <img src="gallery-image2.jpg" alt="Gallery Image 2">
+            <img src="gallery-image3.jpg" alt="Gallery Image 3">
+        </div> -->
+        
+    </div>
+    
+    
+    
+   
+    
+    
+</body>
+</html>

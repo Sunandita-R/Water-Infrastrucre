@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Figtree, sans-serif;
+}
+.header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 800px;
+    font-family: 'Acronym', sans-serif;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: 80px;
+}
+
+/* Apply Montserrat font to all h2 elements */
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    /* Add other h2 styles here if needed */
+}
+
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    display: inline-block;
+    color: #1b95d4;
+    padding-bottom: 10px;
+}
+
+.header .logo img {
+    max-width: 100%;
+    max-height: 180px; /* Adjust the maximum height as needed */
+}
+
+/* Style for the navbar */
+.navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: fixed; /* Make the navbar fixed at the top */
+    z-index: 100; /* Set a high z-index to ensure it's displayed above other content */
+    top: 0; /* Position it at the top of the viewport */
+    font-family: 'Acronym', sans-serif;
+}
+
+body {
+    padding-top: 80px; /* Adjust this value based on the height of your navbar */
+    background-color: rgb(245, 234, 213);
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-left: auto;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #1b95d4;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Table Styles */
+.table {
+    margin: 20px; /* Add margin to create space around the table */
+    border-radius: 10px; /* Add rounded edges */
+    overflow: hidden; /* Hide overflowing content if needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+    width: calc(100% - 40px); /* Adjust width to account for margins */
+}
+
+.table td,
+.table th {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.table th {
+    background-color: #92c9e6;
+    color: #ffffff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #d1e8f5;
+}
+.table tbody tr:nth-child(odd) {
+    background-color: #d1e8f5;
+}
+/* Red status */
+.table .red {
+    background-color: red;
+    color: white;
+}
+
+/* Green status */
+.table .green {
+    background-color: green;
+    color: white;
+}
+
+/* Responsive Table */
+@media (max-width: 500px) {
+    .table thead {
+        display: none;
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+    }
+
+    .table td {
+        padding-left: 50%;
+        text-align: left;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+/* ... (Previous CSS rules) ... */
+
+/* Style for the "View" button */
+.table a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.table a:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}
+

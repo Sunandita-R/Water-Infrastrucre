@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Supply Network</title>
+    <!-- Include Leaflet CSS and JavaScript -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Include Leaflet.draw CSS and JavaScript -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <!-- Include your custom CSS -->
+    <link rel="stylesheet" href="{% static './styles.css' %}" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="{% static 'jal_jeevan_mission_logo.jpg' %}"
+            alt="Jal Jeevan Mission Logo"
+          />
+          <h1>WATER SUPPLY NETWORK MAP</h1>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="container">
+      <div class="sidebar">
+        <h2>Water Supply Network Components</h2>
+        <button id="select-component">Select Water supply Component</button>
+        <div id="component-form">
+          <form id="addComponentForm">
+            {% csrf_token %}
+            <label for="type">Component Type:</label>
+            <select id="type" name="type">
+              <option value="hydrant">Hydrant</option>
+              <option value="tank">Tank</option>
+              <option value="purifier">Purifier</option>
+              <option value="valve">Valve</option>
+            </select>
+            <label for="componentId">Component ID:</label>
+            <input type="text" id="componentId" name="componentId" />
+            <br /><button type="submit">Add Component</button>
+            <p>{{max}}</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Map Section -->
+      <div id="map" class="map"></div>
+    </div>
+    <script>
+      var l = "{{lis|escapejs}}";
+      var p = "{{p|escapejs}}";
+      var max="{{max}}"
+      console.log(max);
+      var hydrantIcon = L.icon({
+        iconUrl: "{% static './hydrant-icon.png' %}",
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+      });
+
+      var tankIcon = L.icon({
+        iconUrl: "{% static './tank-icon.png' %}",
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+      });
+
+      var purifierIcon = L.icon({
+        iconUrl: '{%  static "purifier-icon.png" %}',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+      });
+
+      var valveIcon = L.icon({
+        iconUrl: '{%  static "valve-icon.png" %}',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+      });
+
+      var grievanceIcon = L.icon({
+        iconUrl: '{%  static "grivence.png" %}',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+    });
+    </script>
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>

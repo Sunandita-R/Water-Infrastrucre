@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-compatible" content="IE-edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Water Leak Detection</title>
+    <link rel="stylesheet" href="{% static './styles.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static 'jal_jeevan_mission_logo.jpg'%}" alt="Jal Jeevan Mission Logo">
+                <h1>JAL JODAK</h1>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="logout.html">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Entry ID</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>View Graph</th>
+            </tr>
+        </thead>
+        <tbody id="sensor-data">
+            <!-- Sensor data rows will be dynamically populated here -->
+            {% for i in list %}
+    
+                <tr>
+                  <td>{{i.id}}</td>
+                  <td>{{i.location}}</td>
+                  <td>{{i.status}}</td>
+                  <td></td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        // Function to fetch and update sensor data
+        function fetchSensorData() {
+            // Make an AJAX request to your server to fetch sensor data from PostgreSQL
+            fetch('/get-sensor-data', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Clear the existing table rows
+                const sensorDataElement = document.getElementById('sensor-data');
+                sensorDataElement.innerHTML = '';
+
+                // Iterate through the data and create table rows
+                data.forEach(sensor => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td data-label="Entry ID">${sensor.id}</td>
+                        <td data-label="Location">${sensor.location}</td>
+                        <td data-label="Status" class="${sensor.status === 'Leak Detected' ? 'red' : 'green'}">${sensor.status}</td>
+                        <td data-label="View Graph"><a href="#">View</a></td>
+                    `;
+                    sensorDataElement.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching sensor data:', error);
+            });
+        }
+
+        // Periodically update sensor data every 5 seconds (adjust as needed)
+        setInterval(fetchSensorData, 5000);
+
+        // Initial fetch when the page loads
+        fetchSensorData();
+    </script>
+</body>
+</html>

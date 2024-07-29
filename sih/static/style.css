@@ -1,0 +1,293 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Position the logo and h1 in the header */
+.header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 800px;
+    font-family: 'Acronym', sans-serif;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: 80px;
+}
+
+/* Apply Montserrat font to all h2 elements */
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    /* Add other h2 styles here if needed */
+}
+
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    display: inline-block;
+    color: #1b95d4;
+    padding-bottom: 10px;
+}
+
+.header .logo img {
+    max-width: 100%;
+    max-height: 180px; /* Adjust the maximum height as needed */
+}
+
+/* Style for the navbar */
+.navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: fixed; /* Make the navbar fixed at the top */
+    z-index: 100; /* Set a high z-index to ensure it's displayed above other content */
+    top: 0; /* Position it at the top of the viewport */
+    font-family: 'Acronym', sans-serif;
+}
+
+body {
+    padding-top: 80px; /* Adjust this value based on the height of your navbar */
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-left: auto;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #1b95d4;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Style for the container with background color */
+/* Style for the container with background color */
+/* Style for the container with background color */
+/* Style for the container with background color */
+/* Style for the container with background color */
+.container1 {
+    background-color: #7aa3b7c4;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    height: 100vh; /* Set the height to 100% of the viewport height */
+}
+
+/* Style for the background image */
+/* Center content horizontally and vertically */
+/* Style for the background image of the first container (.background-image1) */
+.background-image1 {
+    background-image: url('map-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    padding: 40px;
+    width: 100%;
+    height: auto;
+    max-width: calc(100% - 80px);
+    max-height: calc(100% - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Add position relative to make z-index work */
+}
+
+/* Add a pseudo-element to apply the blur effect */
+.background-image1::before {
+    content: "";
+    background-image: inherit;
+    filter: blur(130px); /* Adjust the blur amount as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Place it behind the content */
+}
+
+
+/* Style for the centered content container */
+.centered-content {
+    text-align: center;
+   
+}
+
+/* Style for the h2 */
+.background-image2 h2, .background-image1 h2 {
+    font-size: 2rem;
+    margin-bottom: 22px;
+ 
+}
+
+/* Style for the transparent button */
+.transparent-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: .7px solid rgb(208, 219, 223)  !important;; /* Add a 1px solid white border */
+    color: #1b95d4;
+    padding: 15px 30px;
+    border-radius: 10%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    border: white;
+    margin-top: 2px;
+}
+
+
+.transparent-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Style for the background image of the new container */
+.background-image2 {
+    background-image: url('analyze-on-screen.png'); /* Updated background image */
+    background-size: cover;
+    background-size: 800px 600px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    padding: 0px;
+    width: 100%; 
+    height: auto;
+    max-width: calc(100% - 80px);
+    max-height: calc(100% - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container2 {
+    background-color:wheat;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    height: 100vh; /* Set the height to 100% of the viewport height */
+}
+
+/* Style for the news container */
+.container3 {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Style for the news heading */
+.news-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #1b95d4;
+    margin-bottom: 20px;
+}
+
+/* Style for the news filter */
+.news-filter {
+    margin-bottom: 20px;
+}
+
+.news-filter label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.news-filter select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Style for individual news articles */
+.news-article {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-article h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.news-article p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Style for news article images */
+.news-article img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Style for location information */
+.news-article .location-info {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Add spacing for the news list */
+.news-list {
+    padding-top: 20px;
+}
+
+/* Style for the news gallery on the left */
+.news-gallery {
+    flex: 1; /* Takes up the available space */
+    padding-right: 20px; /* Add some spacing between gallery and news */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid layout */
+    grid-gap: 10px; /* Add spacing between gallery items */
+}
+
+.news-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.2s; /* Add a hover effect for images */
+}
+
+.news-gallery img:hover {
+    transform: scale(1.1); /* Enlarge image on hover */
+}

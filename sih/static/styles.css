@@ -1,0 +1,135 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent body overflow */
+}
+
+/* Header styles */
+header {
+    background-color: #ffffff;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: 80px;
+}
+
+/* Add styles for the navbar heading */
+.logo h1 {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    display: inline-block;
+    color: #1b95d4;
+    padding-bottom: 10px;
+}
+
+/* Container for the sidebar and map */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #0054aa;
+    color: white;
+    padding: 20px;
+    width: 250px;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to the sidebar */
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff; /* Change the text color to white */
+}
+
+/* Button styles */
+#select-component {
+    background-color:  rgb(114,185,227);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#select-component:hover {
+    background-color: #004295;
+}
+
+/* Form styles */
+#component-form {
+    display: block;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff; /* Change the label text color */
+}
+
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background-color: rgb(114,185,227);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #004295;
+}
+
+/* Map styles */
+.map {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+/* Set the dimensions for the map container */
+#map {
+    width: 100%;
+    height: 100%; /* Adjust the height as needed */
+}

@@ -1,0 +1,120 @@
+/*
+ * Start Bootstrap - Half Slider (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+html,
+body {
+    height: 100%;
+}
+
+/* You can change the height of the carousel by changing the height in the class below. It is set to 50% by default, but can be any height! */
+
+.carousel {
+    height: 50%;
+}
+
+.item,
+.active,
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-image:url('../img/c1.jpg');
+    -o-background-size: cover;
+}
+
+.fill-full{
+    background-image:url('../img/c2.png');
+}
+
+footer {
+    margin: 50px 0;
+}
+.header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 800px;
+    font-family: 'Acronym', sans-serif;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: 80px;
+}
+
+/* Apply Montserrat font to all h2 elements */
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    /* Add other h2 styles here if needed */
+}
+
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    display: inline-block;
+    color: #1b95d4;
+    padding-bottom: 10px;
+}
+
+.header .logo img {
+    max-width: 100%;
+    max-height: 180px; /* Adjust the maximum height as needed */
+}
+
+/* Style for the navbar */
+.navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: fixed; /* Make the navbar fixed at the top */
+    z-index: 100; /* Set a high z-index to ensure it's displayed above other content */
+    top: 0; /* Position it at the top of the viewport */
+    font-family: 'Acronym', sans-serif;
+}
+
+body {
+    padding-top: 80px; /* Adjust this value based on the height of your navbar */
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-left: auto;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #1b95d4;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
